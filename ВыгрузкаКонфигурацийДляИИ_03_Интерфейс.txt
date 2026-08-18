@@ -1,5 +1,5 @@
 ﻿=== CONFIGURATION EXPORT STARTED ===
-Date: 18.08.2026 14:30:23
+Date: 18.08.2026 15:19:16
 Folder: C:\_sherer\Выгрузка1СДляИИ\xml
 Prefix filter: нет
 ==================================
@@ -169,7 +169,7 @@ Prefix filter: нет
 <Title>
 <v8:item>
 <v8:lang>ru</v8:lang>
-<v8:content>Шаг 2 (Адаптировать XML для ИИ-Агента)</v8:content>
+<v8:content>Шаг 2: (Адаптировать XML для ИИ-Агента)</v8:content>
 </v8:item>
 </Title>
 <Group>Vertical</Group>
@@ -189,13 +189,50 @@ Prefix filter: нет
 <Type>UsualButton</Type>
 <CommandName>Form.Command.КомандаУпаковатьXML</CommandName>
 </Button>
+<Table name="СписокФайловКОтправкеВРепозиторий" id="49">
+<Representation>List</Representation>
+<Header>false</Header>
+<HorizontalLines>false</HorizontalLines>
+<VerticalLines>false</VerticalLines>
+<AutoInsertNewRow>true</AutoInsertNewRow>
+<DataPath>СписокФайловКОтправкеВРепозиторий</DataPath>
+<RowPictureDataPath>СписокФайловКОтправкеВРепозиторий.Picture</RowPictureDataPath>
+<AutoCommandBar name="СписокФайловКОтправкеВРепозиторийКоманднаяПанель" id="51">
+<Autofill>false</Autofill>
+</AutoCommandBar>
+<SearchStringAddition name="СписокФайловКОтправкеВРепозиторийСтрокаПоиска" id="53">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>SearchStringRepresentation</Type>
+</AdditionSource>
+</SearchStringAddition>
+<ViewStatusAddition name="СписокФайловКОтправкеВРепозиторийСостояниеПросмотра" id="56">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>ViewStatusRepresentation</Type>
+</AdditionSource>
+</ViewStatusAddition>
+<SearchControlAddition name="СписокФайловКОтправкеВРепозиторийУправлениеПоиском" id="59">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>SearchControl</Type>
+</AdditionSource>
+</SearchControlAddition>
+<ChildItems>
+<InputField name="СписокФайловКОтправкеВРепозиторийЗначение" id="62">
+<DataPath>СписокФайловКОтправкеВРепозиторий.Value</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+</Table>
 </ChildItems>
 </UsualGroup>
 <UsualGroup name="Группа3" id="22">
 <Title>
 <v8:item>
 <v8:lang>ru</v8:lang>
-<v8:content>Шаг 3 (Публикация XML на GitHab для ИИ-Агента) </v8:content>
+<v8:content>Шаг 3: (Публикация XML на GitHab для ИИ-Агента) </v8:content>
 </v8:item>
 </Title>
 <ToolTip>
@@ -205,7 +242,23 @@ Prefix filter: нет
 </v8:item>
 </ToolTip>
 <Group>Vertical</Group>
+<ShowTitle>false</ShowTitle>
 <ThroughAlign>Use</ThroughAlign>
+<ChildItems>
+<UsualGroup name="Группа3_1" id="69">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 3: (Публикация XML на GitHab для ИИ-Агента) </v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Группа3 1</v8:content>
+</v8:item>
+</ToolTip>
+<Behavior>Collapsible</Behavior>
 <ChildItems>
 <InputField name="GitHub_Репозиторий" id="24">
 <DataPath>Объект.GitHub_Репозиторий</DataPath>
@@ -229,9 +282,25 @@ Prefix filter: нет
 <PasswordMode>true</PasswordMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
+</ChildItems>
+</UsualGroup>
 <Button name="КомандаЗагрузитьВGitHub" id="20">
 <Type>UsualButton</Type>
 <CommandName>Form.Command.КомандаЗагрузитьВGitHub</CommandName>
+</Button>
+</ChildItems>
+</UsualGroup>
+<UsualGroup name="Группа4" id="65">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 4: Очистить каталог выгрузки</v8:content>
+</v8:item>
+</Title>
+<ChildItems>
+<Button name="КомандаОчиститьКаталогВыгрузки" id="67">
+<Type>UsualButton</Type>
+<CommandName>Form.Command.КомандаОчиститьКаталогВыгрузки</CommandName>
 </Button>
 </ChildItems>
 </UsualGroup>
@@ -307,6 +376,7 @@ Prefix filter: нет
 <v8:AllowedLength>Variable</v8:AllowedLength>
 </v8:StringQualifiers>
 </Type>
+<FillCheck>ShowError</FillCheck>
 <Save>
 <Field>КаталогВыгрузкиXML</Field>
 </Save>
@@ -440,6 +510,21 @@ Prefix filter: нет
 </v8:item>
 </ToolTip>
 <Action>КомандаУпаковатьXML</Action>
+</Command>
+<Command name="КомандаОчиститьКаталогВыгрузки" id="4">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Очистить каталог выгрузки</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Команда очистить каталог выгрузки</v8:content>
+</v8:item>
+</ToolTip>
+<Action>КомандаОчиститьКаталогВыгрузки</Action>
 </Command>
 </Commands>
 </Form>

@@ -1,0 +1,535 @@
+﻿=== CONFIGURATION EXPORT STARTED ===
+Date: 18.08.2026 17:53:51
+Folder: C:\_sherer\Выгрузка1СДляИИ\xml
+Prefix filter: нет
+==================================
+
+[FILE 1] Catalogs\aiCoder_GitHub_Репозитории\Forms\ФормаЭлемента.xml
+[TYPE] XML
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject>
+<Form>
+<Properties>
+<Name>ФормаЭлемента</Name>
+<Synonym>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Форма элемента</v8:content>
+</v8:item>
+</Synonym>
+<FormType>Managed</FormType>
+</Properties>
+</Form>
+</MetaDataObject>
+---
+[FILE_END 1]
+
+[FILE 2] Catalogs\aiCoder_GitHub_Репозитории\Forms\ФормаЭлемента\Ext\Form.xml
+[TYPE] XML
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<Form>
+<ChildItems>
+<UsualGroup name="Группа1" id="19">
+<Group>AlwaysHorizontal</Group>
+<ShowTitle>false</ShowTitle>
+<ThroughAlign>Use</ThroughAlign>
+<ChildItems>
+<InputField name="Наименование" id="4">
+<DataPath>Объект.Description</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Код" id="1">
+<DataPath>Объект.Code</DataPath>
+<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+</UsualGroup>
+<InputField name="Логин" id="7">
+<DataPath>Объект.Логин</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Репозиторий" id="10">
+<DataPath>Объект.Репозиторий</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Ветка" id="13">
+<DataPath>Объект.Ветка</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Токен" id="16">
+<DataPath>Объект.Токен</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+<Attributes>
+<Attribute name="Объект" id="1">
+<Type>
+<v8:Type>cfg:CatalogObject.aiCoder_GitHub_Репозитории</v8:Type>
+</Type>
+<MainAttribute>true</MainAttribute>
+<SavedData>true</SavedData>
+</Attribute>
+</Attributes>
+</Form>
+---
+[FILE_END 2]
+
+[FILE 3] DataProcessors\_ВыгрузкаКонфигурацииДляИИ\Forms\Форма.xml
+[TYPE] XML
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject>
+<Form>
+<Properties>
+<Name>Форма</Name>
+<Synonym>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Форма</v8:content>
+</v8:item>
+</Synonym>
+<FormType>Managed</FormType>
+</Properties>
+</Form>
+</MetaDataObject>
+---
+[FILE_END 3]
+
+[FILE 4] DataProcessors\_ВыгрузкаКонфигурацииДляИИ\Forms\Форма\Ext\Form.xml
+[TYPE] XML
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<Form>
+<SaveDataInSettings>UseList</SaveDataInSettings>
+<SaveWindowSettings>false</SaveWindowSettings>
+<Events>
+<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
+</Events>
+<ChildItems>
+<InputField name="Проект" id="34">
+<DataPath>Проект</DataPath>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Используется для сохранения настроек в форму и как префикс файлов в репозитории. </v8:content>
+</v8:item>
+</ToolTip>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="КаталогВыгрузкиXML" id="15">
+<DataPath>КаталогВыгрузкиXML</DataPath>
+<ChoiceButton>true</ChoiceButton>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+<Events>
+<Event name="StartChoice">КаталогФайловНачалоВыбора</Event>
+</Events>
+</InputField>
+<UsualGroup name="Группа1" id="18">
+<Visible>false</Visible>
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 1 (Выгрузка базы в XML)</v8:content>
+</v8:item>
+</Title>
+<ChildItems>
+<InputField name="ПодключениеКБазе_Адрес" id="1">
+<DataPath>Объект.ПодключениеКБазе_Адрес</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="ПодключениеКБазе_Пользователь" id="4">
+<DataPath>Объект.ПодключениеКБазе_Пользователь</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="ПодключениеКБазе_Пароль" id="7">
+<DataPath>Объект.ПодключениеКБазе_Пароль</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="ИмяРасширенияКонфигурации" id="12">
+<DataPath>Объект.ИмяРасширенияКонфигурации</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<Button name="КомандаВыгрузитьВXML" id="10">
+<Type>UsualButton</Type>
+<CommandName>Form.Command.КомандаВыгрузитьВXML</CommandName>
+</Button>
+</ChildItems>
+</UsualGroup>
+<UsualGroup name="Группа2" id="27">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 2: (Адаптировать XML для ИИ-Агента)</v8:content>
+</v8:item>
+</Title>
+<Group>Vertical</Group>
+<ThroughAlign>Use</ThroughAlign>
+<ChildItems>
+<InputField name="ПрефиксОбъектовМетаданных" id="31">
+<DataPath>ПрефиксОбъектовМетаданных</DataPath>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Префикс объектов метаданных для отправки в репозиторий</v8:content>
+</v8:item>
+</ToolTip>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<Button name="КомандаУпаковатьXML" id="29">
+<Type>UsualButton</Type>
+<CommandName>Form.Command.КомандаУпаковатьXML</CommandName>
+</Button>
+<Table name="СписокФайловКОтправкеВРепозиторий" id="49">
+<Representation>List</Representation>
+<Header>false</Header>
+<HorizontalLines>false</HorizontalLines>
+<VerticalLines>false</VerticalLines>
+<AutoInsertNewRow>true</AutoInsertNewRow>
+<DataPath>СписокФайловКОтправкеВРепозиторий</DataPath>
+<RowPictureDataPath>СписокФайловКОтправкеВРепозиторий.Picture</RowPictureDataPath>
+<AutoCommandBar name="СписокФайловКОтправкеВРепозиторийКоманднаяПанель" id="51">
+<Autofill>false</Autofill>
+</AutoCommandBar>
+<SearchStringAddition name="СписокФайловКОтправкеВРепозиторийСтрокаПоиска" id="53">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>SearchStringRepresentation</Type>
+</AdditionSource>
+</SearchStringAddition>
+<ViewStatusAddition name="СписокФайловКОтправкеВРепозиторийСостояниеПросмотра" id="56">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>ViewStatusRepresentation</Type>
+</AdditionSource>
+</ViewStatusAddition>
+<SearchControlAddition name="СписокФайловКОтправкеВРепозиторийУправлениеПоиском" id="59">
+<AdditionSource>
+<Item>СписокФайловКОтправкеВРепозиторий</Item>
+<Type>SearchControl</Type>
+</AdditionSource>
+</SearchControlAddition>
+<ChildItems>
+<InputField name="СписокФайловКОтправкеВРепозиторийЗначение" id="62">
+<DataPath>СписокФайловКОтправкеВРепозиторий.Value</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+</Table>
+</ChildItems>
+</UsualGroup>
+<UsualGroup name="Группа3" id="22">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 3: (Публикация XML на GitHab для ИИ-Агента) </v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Группа3</v8:content>
+</v8:item>
+</ToolTip>
+<Group>Vertical</Group>
+<ShowTitle>false</ShowTitle>
+<ThroughAlign>Use</ThroughAlign>
+<ChildItems>
+<UsualGroup name="Группа3_1" id="69">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 3: (Публикация XML на GitHab для ИИ-Агента) </v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Группа3 1</v8:content>
+</v8:item>
+</ToolTip>
+<Group>Vertical</Group>
+<Behavior>Collapsible</Behavior>
+<ChildItems>
+<InputField name="GitHub_Репозиторий" id="24">
+<DataPath>Объект.GitHub_Репозиторий</DataPath>
+<Visible>false</Visible>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Репозиторий_Логин" id="37">
+<DataPath>GitHub_Логин</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Репозиторий_Репозиторий" id="40">
+<DataPath>GitHub_Репозиторий</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Репозиторий_Ветка" id="43">
+<DataPath>GitHub_Ветка</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+<InputField name="Репозиторий_Токен" id="46">
+<DataPath>GitHub_Токен</DataPath>
+<PasswordMode>true</PasswordMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+</UsualGroup>
+<Button name="КомандаЗагрузитьВGitHub" id="20">
+<Type>UsualButton</Type>
+<CommandName>Form.Command.КомандаЗагрузитьВGitHub</CommandName>
+</Button>
+</ChildItems>
+</UsualGroup>
+<UsualGroup name="Группа4" id="65">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Шаг 4: Очистить каталог выгрузки</v8:content>
+</v8:item>
+</Title>
+<ChildItems>
+<Button name="КомандаОчиститьКаталогВыгрузки" id="67">
+<Type>UsualButton</Type>
+<CommandName>Form.Command.КомандаОчиститьКаталогВыгрузки</CommandName>
+</Button>
+</ChildItems>
+</UsualGroup>
+</ChildItems>
+<Attributes>
+<Attribute name="Объект" id="1">
+<Type>
+<v8:Type>cfg:DataProcessorObject._ВыгрузкаКонфигурацииДляИИ</v8:Type>
+</Type>
+<MainAttribute>true</MainAttribute>
+</Attribute>
+<Attribute name="СписокПроектов" id="2">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Список проектов</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>v8:ValueListType</v8:Type>
+</Type>
+<SavedData>true</SavedData>
+</Attribute>
+<Attribute name="Проект" id="3">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Проект</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>30</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<SavedData>true</SavedData>
+<FillCheck>ShowError</FillCheck>
+<Save>
+<Field>Проект</Field>
+</Save>
+</Attribute>
+<Attribute name="ПрефиксОбъектовМетаданных" id="4">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Префикс объектов метаданных.</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>50</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<Save>
+<Field>ПрефиксОбъектовМетаданных</Field>
+</Save>
+</Attribute>
+<Attribute name="КаталогВыгрузкиXML" id="5">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Каталог выгрузки XML</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>0</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<FillCheck>ShowError</FillCheck>
+<Save>
+<Field>КаталогВыгрузкиXML</Field>
+</Save>
+</Attribute>
+<Attribute name="GitHub_Логин" id="6">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>GitHub-логин</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>0</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<Save>
+<Field>GitHub_Логин</Field>
+</Save>
+</Attribute>
+<Attribute name="GitHub_Репозиторий" id="7">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>GitHub-репозиторий</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>0</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<Save>
+<Field>GitHub_Репозиторий</Field>
+</Save>
+</Attribute>
+<Attribute name="GitHub_Ветка" id="8">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>GitHub-ветка</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>0</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<Save>
+<Field>GitHub_Ветка</Field>
+</Save>
+</Attribute>
+<Attribute name="GitHub_Токен" id="9">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>GitHub-токен</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>xs:string</v8:Type>
+<v8:StringQualifiers>
+<v8:Length>0</v8:Length>
+<v8:AllowedLength>Variable</v8:AllowedLength>
+</v8:StringQualifiers>
+</Type>
+<Save>
+<Field>GitHub_Токен</Field>
+</Save>
+</Attribute>
+<Attribute name="СписокФайловКОтправкеВРепозиторий" id="10">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Список файлов к отправке в репозиторий</v8:content>
+</v8:item>
+</Title>
+<Type>
+<v8:Type>v8:ValueListType</v8:Type>
+</Type>
+</Attribute>
+</Attributes>
+<Commands>
+<Command name="КомандаВыгрузитьВXML" id="1">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Выгрузить в XML</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Команда выгрузить ВXML</v8:content>
+</v8:item>
+</ToolTip>
+<Action>КомандаВыгрузитьВXML</Action>
+</Command>
+<Command name="КомандаЗагрузитьВGitHub" id="2">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Загрузить файлы в GitHub</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Команда загрузить в git hub</v8:content>
+</v8:item>
+</ToolTip>
+<Action>КомандаЗагрузитьВGitHub</Action>
+</Command>
+<Command name="КомандаУпаковатьXML" id="3">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Упаковать XML</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Команда упаковать XML</v8:content>
+</v8:item>
+</ToolTip>
+<Action>КомандаУпаковатьXML</Action>
+</Command>
+<Command name="КомандаОчиститьКаталогВыгрузки" id="4">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Очистить каталог выгрузки</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Команда очистить каталог выгрузки</v8:content>
+</v8:item>
+</ToolTip>
+<Action>КомандаОчиститьКаталогВыгрузки</Action>
+</Command>
+</Commands>
+</Form>
+---
+[FILE_END 4]
+
+=== EXPORT FINISHED ===

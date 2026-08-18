@@ -1,5 +1,5 @@
 ﻿=== CONFIGURATION EXPORT STARTED ===
-Date: 18.08.2026 14:30:23
+Date: 18.08.2026 15:19:16
 Folder: C:\_sherer\Выгрузка1СДляИИ\xml
 Prefix filter: нет
 ==================================

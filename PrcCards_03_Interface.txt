@@ -1,5 +1,5 @@
 ﻿=== CONFIGURATION EXPORT STARTED ===
-Date: 26.08.2026 18:03:44
+Date: 28.08.2026 17:50:33
 Folder: C:\_sherer\Выгрузка1СДляИИ\xml
 Prefix filter: нет
 ==================================
@@ -722,17 +722,13 @@ Prefix filter: нет
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
-<InputField name="Наименование" id="4">
-<DataPath>Объект.Description</DataPath>
+<InputField name="Код" id="1">
+<DataPath>Объект.Code</DataPath>
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
-<InputField name="Обработчик" id="79">
-<DataPath>Объект.Обработчик</DataPath>
-<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-</InputField>
-<InputField name="Код" id="1">
-<DataPath>Объект.Code</DataPath>
+<InputField name="Наименование" id="4">
+<DataPath>Объект.Description</DataPath>
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
@@ -759,9 +755,70 @@ Prefix filter: нет
 <v8:content>Группа оновное</v8:content>
 </v8:item>
 </ToolTip>
-<Group>AlwaysHorizontal</Group>
+<Group>Vertical</Group>
 <ShowTitle>false</ShowTitle>
 <ChildItems>
+<UsualGroup name="ГруппаВидыКарточек" id="91">
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Виды карточек</v8:content>
+</v8:item>
+</Title>
+<ToolTip>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Группа виды карточек</v8:content>
+</v8:item>
+</ToolTip>
+<Behavior>Collapsible</Behavior>
+<ChildItems>
+<Table name="ВидыКарточек" id="93">
+<AutoInsertNewRow>true</AutoInsertNewRow>
+<EnableStartDrag>true</EnableStartDrag>
+<EnableDrag>true</EnableDrag>
+<DataPath>Объект.ВидыКарточек</DataPath>
+<AutoCommandBar name="ВидыКарточекКоманднаяПанель" id="95">
+<Autofill>false</Autofill>
+</AutoCommandBar>
+<SearchStringAddition name="ВидыКарточекСтрокаПоиска" id="97">
+<AdditionSource>
+<Item>ВидыКарточек</Item>
+<Type>SearchStringRepresentation</Type>
+</AdditionSource>
+</SearchStringAddition>
+<ViewStatusAddition name="ВидыКарточекСостояниеПросмотра" id="100">
+<AdditionSource>
+<Item>ВидыКарточек</Item>
+<Type>ViewStatusRepresentation</Type>
+</AdditionSource>
+</ViewStatusAddition>
+<SearchControlAddition name="ВидыКарточекУправлениеПоиском" id="103">
+<AdditionSource>
+<Item>ВидыКарточек</Item>
+<Type>SearchControl</Type>
+</AdditionSource>
+</SearchControlAddition>
+<ChildItems>
+<LabelField name="ВидыКарточекНомерСтроки" id="106">
+<DataPath>Объект.ВидыКарточек.LineNumber</DataPath>
+<Title>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content> </v8:content>
+</v8:item>
+</Title>
+<EditMode>EnterOnInput</EditMode>
+</LabelField>
+<InputField name="ВидыКарточекВидКарточки" id="109">
+<DataPath>Объект.ВидыКарточек.ВидКарточки</DataPath>
+<EditMode>EnterOnInput</EditMode>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
+</ChildItems>
+</Table>
+</ChildItems>
+</UsualGroup>
 <UsualGroup name="ГруппаУсловия" id="12">
 <Title>
 <v8:item>
@@ -812,13 +869,13 @@ Prefix filter: нет
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
-<InputField name="УсловияРоль" id="85">
-<DataPath>Объект.Условия.ФункциональнаяРоль</DataPath>
+<InputField name="УсловияВидРеквизита" id="36">
+<DataPath>Объект.Условия.ВидРеквизита</DataPath>
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
-<InputField name="УсловияВидРеквизита" id="36">
-<DataPath>Объект.Условия.ВидРеквизита</DataPath>
+<InputField name="УсловияРоль" id="85">
+<DataPath>Объект.Условия.ВидРеквизитаДополнение</DataPath>
 <EditMode>EnterOnInput</EditMode>
 <ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 </InputField>
@@ -947,6 +1004,10 @@ Prefix filter: нет
 <Group>Vertical</Group>
 <Behavior>Collapsible</Behavior>
 <ChildItems>
+<InputField name="Обработчик" id="79">
+<DataPath>Объект.Обработчик</DataPath>
+<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+</InputField>
 <Table name="Действия" id="44">
 <Representation>List</Representation>
 <AutoInsertNewRow>true</AutoInsertNewRow>

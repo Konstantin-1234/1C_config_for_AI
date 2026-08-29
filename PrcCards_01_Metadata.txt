@@ -1,6 +1,6 @@
 ﻿=== CONFIGURATION EXPORT STARTED ===
-Date: 29.08.2026 16:45:09
-Folder: C:\_sherer\tmp\xml for AI
+Date: 29.08.2026 16:48:45
+Folder: C:\_tmp\XML for AI
 Prefix filter: нет
 ==================================
 

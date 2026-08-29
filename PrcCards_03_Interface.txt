@@ -1,5 +1,5 @@
 ﻿=== CONFIGURATION EXPORT STARTED ===
-Date: 29.08.2026 16:48:45
+Date: 29.08.2026 18:07:40
 Folder: C:\_tmp\XML for AI
 Prefix filter: нет
 ==================================
